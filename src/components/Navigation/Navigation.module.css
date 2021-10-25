@@ -1,0 +1,14 @@
+.navigation {
+  margin-top: 30px;
+  display: inline-block;
+  font-size: 30px;
+  text-decoration: none;
+  color: #000;
+  margin-left: 50px;
+}
+
+.navigationActive {
+  color: rgb(108, 207, 42);
+  text-decoration: none;
+  font-weight: 600;
+}

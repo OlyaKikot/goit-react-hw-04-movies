@@ -1,0 +1,15 @@
+.list {
+  list-style: none;
+  color: #000;
+  text-decoration: none;
+}
+.item {
+  color: #000;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.item:hover {
+  color: rgb(19, 100, 89);
+  font-weight: 600;
+}

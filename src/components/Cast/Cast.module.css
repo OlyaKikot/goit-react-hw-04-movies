@@ -1,0 +1,10 @@
+.list {
+  list-style: none;
+}
+
+.img {
+  width: 200px;
+}
+.item {
+  font-size: 15px;
+}
