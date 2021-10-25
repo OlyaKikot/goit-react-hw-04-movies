@@ -1,4 +1,4 @@
-import { Switch, Route } from "react-router";
+import { Redirect, Switch, Route } from "react-router";
 import { lazy, Suspense } from "react";
 import AppBar from "./components/AppBar/AppBar";
 
@@ -24,10 +24,8 @@ export default function App() {
           <Route path="/movies/:filmId/">
             <MovieDetails />
           </Route>
-
-          <Route path="/">
-            <HomePage />
-          </Route>
+          {/* <Route component={HomePage} /> */}
+          <Redirect to="/" />
         </Switch>
       </Suspense>
     </>

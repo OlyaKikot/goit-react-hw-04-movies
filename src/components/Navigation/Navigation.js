@@ -12,6 +12,7 @@ const Navigation = () => (
       HomePage
     </NavLink>
     <NavLink
+      exact
       to="/movies"
       className={s.navigation}
       activeClassName={s.navigationActive}

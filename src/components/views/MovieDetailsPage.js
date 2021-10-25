@@ -21,6 +21,9 @@ export default function MovieDetails() {
   const onGoBack = () => {
     history.push(location?.state?.from ?? "/");
   };
+  if (infoFilm === null) {
+    return <h1>no film</h1>;
+  }
   return (
     <>
       <button type="button" onClick={onGoBack} className={s.button}>
@@ -38,7 +41,6 @@ export default function MovieDetails() {
           <span>{infoFilm?.overview}</span>
           <h3>Rating</h3>
           <span>{infoFilm?.vote_average}</span>
-          <h3>additional information</h3>
         </div>
       </div>
       <ul className={s.list}>
