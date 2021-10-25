@@ -6,8 +6,12 @@ export default function Cast({ filmId }) {
   useEffect(() => {
     return Api.fetchMoviesCredits(filmId).then(setActors);
   }, [filmId]);
+
   return (
     <>
+      {actors?.cast.length === 0 && (
+        <p>We don't have any reviews for this movie.</p>
+      )}
       <ul className={s.list}>
         {actors?.cast?.map(
           (actor) =>

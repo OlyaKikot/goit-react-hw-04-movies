@@ -21,13 +21,14 @@ export default function MovieDetails() {
   const onGoBack = () => {
     history.push(location?.state?.from ?? "/");
   };
+
   if (infoFilm === null) {
     return <h1>no film</h1>;
   }
   return (
     <>
       <button type="button" onClick={onGoBack} className={s.button}>
-        Back
+        go back
       </button>
       <div className={s.container}>
         <img
@@ -39,8 +40,17 @@ export default function MovieDetails() {
           <h2 className={s.title}>{infoFilm?.original_title}</h2>
           <h3>Overview</h3>
           <span>{infoFilm?.overview}</span>
-          <h3>Rating</h3>
-          <span>{infoFilm?.vote_average}</span>
+          <h3>Genres</h3>
+          <ul className={s.listGenres}>
+            {infoFilm?.genres?.map(
+              (genre) =>
+                infoFilm.genres && (
+                  <li className={s.itemGenre} key={genre.id}>
+                    <p>{genre.name}</p>
+                  </li>
+                )
+            )}
+          </ul>
         </div>
       </div>
       <ul className={s.list}>

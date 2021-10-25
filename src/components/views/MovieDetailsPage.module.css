@@ -1,8 +1,11 @@
 .button {
-  font-size: 20px;
+  font-size: 16px;
   margin-left: 50px;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  width: 150px;
+  outline: none;
 }
 
 .title {
@@ -33,4 +36,14 @@
 .item:hover {
   color: rgb(55, 102, 5);
   font-weight: 600;
+}
+
+.itemGenre {
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+.listGenres {
+  list-style: none;
+  padding: 0;
 }
