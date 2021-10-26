@@ -14,7 +14,7 @@ export default function MovieDetails() {
   const { url } = useRouteMatch();
   const { filmId } = useParams();
   const [infoFilm, setInfoFilm] = useState(null);
-
+  console.log(location?.state?.from);
   useEffect(() => {
     return Api.fetchMoviesDetailst(filmId).then(setInfoFilm);
   }, [filmId]);
@@ -55,12 +55,24 @@ export default function MovieDetails() {
       </div>
       <ul className={s.list}>
         <li key={infoFilm?.id}>
-          <Link to={`/movies/${infoFilm?.id}/cast`} className={s.item}>
+          <Link
+            to={{
+              pathname: `/movies/${infoFilm?.id}/cast`,
+              state: { from: location?.state?.from },
+            }}
+            className={s.item}
+          >
             Cast
           </Link>
         </li>
         <li key={infoFilm?.id}>
-          <Link to={`/movies/${infoFilm?.id}/reviews`} className={s.item}>
+          <Link
+            to={{
+              pathname: `/movies/${infoFilm?.id}/reviews`,
+              state: { from: location?.state?.from },
+            }}
+            className={s.item}
+          >
             Reviews
           </Link>
         </li>
